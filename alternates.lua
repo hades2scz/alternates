@@ -603,6 +603,24 @@ local Library do
             return UIStroke
         end
 
+        Instances.AddToTheme = function(self, Properties)
+            if not self.Instance then 
+                return self
+            end
+
+            -- Store theme properties on the instance for later theme application
+            if not self.Instance:GetAttribute("ThemeData") then
+                local themeData = {}
+                for key, value in pairs(Properties or {}) do
+                    themeData[key] = value
+                end
+                -- Store as a serializable format
+                self.Instance:SetAttribute("ThemeProperties", HttpService:JSONEncode(themeData))
+            end
+
+            return self
+        end
+
         Instances.Tooltip = function(self, Data)
             if not self.Instance then 
                 return
