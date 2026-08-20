@@ -1706,8 +1706,6 @@ local Library do
                     Rotation = -165,
                     Color = RGBSequence{RGBSequenceKeypoint(0, FromRGB(255, 255, 255)), RGBSequenceKeypoint(1, FromRGB(208, 208, 208))}
                 })
-                    return RGBSequence{RGBSequenceKeypoint(0, FromRGB(255, 255, 255)), RGBSequenceKeypoint(1, FromRGB(255, 200, 0))}
-                end})
 
                 Items["Check"] = Instances:Create("ImageLabel", {
                     Parent = Items["Indicator"].Instance,
@@ -1921,8 +1919,6 @@ local Library do
                         Rotation = -165,
                         Color = RGBSequence{RGBSequenceKeypoint(0, FromRGB(255, 255, 255)), RGBSequenceKeypoint(1, FromRGB(208, 208, 208))}
                     })
-                        return RGBSequence{RGBSequenceKeypoint(0, FromRGB(255, 255, 255)), RGBSequenceKeypoint(1, FromRGB(255, 200, 0))}
-                    end})
 
                     Instances:Create("UIStroke", {
                         Parent = SubItems["NewButton"].Instance,
@@ -2337,9 +2333,6 @@ local Library do
                     Rotation = -165,
                     Color = RGBSequence{RGBSequenceKeypoint(0, FromRGB(255, 255, 255)), RGBSequenceKeypoint(1, FromRGB(208, 208, 208))}
                 })
-                    return RGBSequence{RGBSequenceKeypoint(0, FromRGB(255, 255, 255)), RGBSequenceKeypoint(1, FromRGB(255, 200, 0))}
-                end})
-
                 Instances:Create("UIStroke", {
                     Parent = Items["RealDropdown"].Instance,
                     Name = "\0",
@@ -4643,9 +4636,6 @@ local Library do
                     Rotation = -165,
                     Color = RGBSequence{RGBSequenceKeypoint(0, FromRGB(255, 255, 255)), RGBSequenceKeypoint(1, FromRGB(208, 208, 208))}
                 })
-                    return RGBSequence{RGBSequenceKeypoint(0, FromRGB(255, 255, 255)), RGBSequenceKeypoint(1, FromRGB(255, 200, 0))}
-                end})
-
                 Instances:Create("UIStroke", {
                     Parent = Items["Background"].Instance,
                     Name = "\0",
@@ -4839,9 +4829,6 @@ local Library do
                     Rotation = -165,
                     Color = RGBSequence{RGBSequenceKeypoint(0, FromRGB(255, 255, 255)), RGBSequenceKeypoint(1, FromRGB(208, 208, 208))}
                 })
-                    return RGBSequence{RGBSequenceKeypoint(0, FromRGB(255, 255, 255)), RGBSequenceKeypoint(1, FromRGB(255, 200, 0))}
-                end})
-
                 Items["List"] = Instances:Create("ScrollingFrame", {
                     Parent = Items["RealListbox"].Instance,
                     Name = "\0",
@@ -6911,6 +6898,9 @@ getgenv().UnloadAlternate = function()
     end
 end
 return Library
+
+
+
 
 
 
