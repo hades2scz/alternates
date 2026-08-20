@@ -237,18 +237,18 @@ local Library do
 
     local Themes = {
         ["Preset"] = {
-            ["Background"] = FromRGB(14, 14, 14),
-            ["Border"] = FromRGB(45, 45, 50),
-            ["Inline"] = FromRGB(12, 12, 12),
-            ["Hovered Element"] = FromRGB(80, 80, 80),
-            ["Page Background"] = FromRGB(12, 12, 12),
-            ["Outline"] = FromRGB(55, 55, 60),
-            ["Element"] = FromRGB(54, 54, 54),
-            ["Gradient"] = FromRGB(255, 255, 255),
-            ["Text"] = FromRGB(235, 235, 235),
+            ["Background"] = FromRGB(0, 0, 0),
+            ["Border"] = FromRGB(0, 0, 0),
+            ["Inline"] = FromRGB(0, 0, 0),
+            ["Hovered Element"] = FromRGB(15, 15, 15),
+            ["Page Background"] = FromRGB(0, 0, 0),
+            ["Outline"] = FromRGB(0, 0, 0),
+            ["Element"] = FromRGB(8, 8, 8),
+            ["Gradient"] = FromRGB(255, 255, 0),
+            ["Text"] = FromRGB(255, 255, 255),
             ["Text Stroke"] = FromRGB(0, 0, 0),
             ["Placeholder Text"] = FromRGB(150, 150, 150),
-            ["Accent"] = FromRGB(100, 200, 255)
+            ["Accent"] = FromRGB(255, 255, 0)
         }
     }
 
@@ -2348,28 +2348,20 @@ local Library do
                     Name = "\0",
                     AnchorPoint = Vector2New(0, 1),
                     Position = UDim2New(0, 0, 1, 0),
-                    BorderColor3 = FromRGB(12, 12, 12),
+                    BorderColor3 = FromRGB(0, 0, 0),
                     Size = UDim2New(1, 0, 0, 8),
-                    BorderSizePixel = 1,
-                    BackgroundColor3 = FromRGB(30, 36, 31)
+                    BorderSizePixel = 0,
+                    BackgroundColor3 = FromRGB(20, 20, 20)
                 })  Items["RealSlider"]:AddToTheme({BackgroundColor3 = "Element", BorderColor3 = "Border"})
-
-                Instances:Create("UIGradient", {
-                    Parent = Items["RealSlider"].Instance,
-                    Name = "\0",
-                    Rotation = -90,
-                    Color = RGBSequence{RGBSequenceKeypoint(0, FromRGB(40, 40, 40)), RGBSequenceKeypoint(1, FromRGB(24, 24, 24))}
-                }):AddToTheme({Color = function()
-                    return RGBSequence{RGBSequenceKeypoint(0, FromRGB(40, 40, 40)), RGBSequenceKeypoint(1, Library.Theme.Gradient)}
-                end})
 
                 Instances:Create("UIStroke", {
                     Parent = Items["RealSlider"].Instance,
                     Name = "\0",
-                    Color = FromRGB(42, 49, 45),
+                    Color = FromRGB(255, 255, 0),
+                    Thickness = 0.5,
                     LineJoinMode = Enum.LineJoinMode.Miter,
                     ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-                }):AddToTheme({Color = "Outline"})
+                }):AddToTheme({Color = "Accent"})
 
                 Items["Accent"] = Instances:Create("Frame", {
                     Parent = Items["RealSlider"].Instance,
@@ -2377,15 +2369,8 @@ local Library do
                     BorderColor3 = FromRGB(0, 0, 0),
                     Size = UDim2New(0.5, 0, 1, 0),
                     BorderSizePixel = 0,
-                    BackgroundColor3 = FromRGB(19, 128, 225)
+                    BackgroundColor3 = FromRGB(255, 255, 0)
                 })  Items["Accent"]:AddToTheme({BackgroundColor3 = "Accent"})
-
-                Instances:Create("UIGradient", {
-                    Parent = Items["Accent"].Instance,
-                    Name = "\0",
-                    Rotation = -90,
-                    Color = RGBSequence{RGBSequenceKeypoint(0, FromRGB(255, 210, 120)), RGBSequenceKeypoint(1, FromRGB(210, 180, 80))}
-                }):AddToTheme({Color = function()
                     return RGBSequence{RGBSequenceKeypoint(0, FromRGB(255, 210, 120)), RGBSequenceKeypoint(1, Library.Theme.Accent)}
                 end})
 
@@ -6373,14 +6358,12 @@ local Library do
             Items["Section"] = Instances:Create("Frame", {
                 Parent = sectionParent,
                 Name = "\0",
-                Size = UDim2New(1, 0, 0, 28),
-                BorderColor3 = FromRGB(42, 49, 45),
-                BorderSizePixel = 1,
+                Size = UDim2New(1, 0, 0, 0),
+                BorderColor3 = FromRGB(0, 0, 0),
+                BorderSizePixel = 0,
                 AutomaticSize = Enum.AutomaticSize.Y,
-                BackgroundColor3 = FromRGB(18, 18, 18)
+                BackgroundColor3 = FromRGB(0, 0, 0)
             })  Items["Section"]:AddToTheme({BackgroundColor3 = "Page Background", BorderColor3 = "Outline"})
-
-            Items["Section"]:Border("Border")
 
             Items["Text"] = Instances:Create("TextLabel", {
                 Parent = Items["Section"].Instance,
@@ -6403,7 +6386,10 @@ local Library do
             Instances:Create("UIPadding", {
                 Parent = Items["Section"].Instance,
                 Name = "\0",
-                PaddingBottom = UDimNew(0, 8)
+                PaddingTop = UDimNew(0, 8),
+                PaddingBottom = UDimNew(0, 8),
+                PaddingLeft = UDimNew(0, 8),
+                PaddingRight = UDimNew(0, 8)
             })
 
             Items["Content"] = Instances:Create("Frame", {
@@ -6411,8 +6397,8 @@ local Library do
                 Name = "\0",
                 BorderColor3 = FromRGB(0, 0, 0),
                 BackgroundTransparency = 1,
-                Position = UDim2New(0, 10, 0, 26),
-                Size = UDim2New(1, -20, 0, 0),
+                Position = UDim2New(0, 0, 0, 0),
+                Size = UDim2New(1, 0, 0, 0),
                 BorderSizePixel = 0,
                 AutomaticSize = Enum.AutomaticSize.Y,
                 ClipsDescendants = true,
