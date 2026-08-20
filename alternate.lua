@@ -2371,8 +2371,6 @@ local Library do
                     BorderSizePixel = 0,
                     BackgroundColor3 = FromRGB(255, 255, 0)
                 })  Items["Accent"]:AddToTheme({BackgroundColor3 = "Accent"})
-                    return RGBSequence{RGBSequenceKeypoint(0, FromRGB(255, 210, 120)), RGBSequenceKeypoint(1, Library.Theme.Accent)}
-                end})
 
                 Items["Dragger"] = Instances:Create("Frame", {
                     Parent = Items["Accent"].Instance,
